@@ -6,8 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "lint": "ng lint && npm run stylelint",
+    "e2e": "ng e2e",
+    "stylelint": "stylelint \"./src/**/*.{css,scss}\" --config ./.stylelint"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~10.0.14",
     "@angular/router": "~10.0.14",
     "@ngrx/store": "^10.0.0",
+    "normalize.css": "^8.0.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
@@ -60,6 +62,6 @@
   "lint-staged": {
     "*.{ts,js,css,scss,html,json,md}": "prettier --write",
     "*.{ts}": "ng lint memory-mori --files",
-    "*.{css,scss}": "stylelint"
+    "*.{css,scss}": "stylelint --config ./.stylelint"
   }
 }

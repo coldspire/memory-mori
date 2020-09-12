@@ -1,0 +1,16 @@
+.board-container {
+  margin: 5rem;
+  display: grid;
+  place-content: center;
+}
+
+.board {
+  display: grid;
+  --card-size: 64px;
+  grid-template-columns: repeat(8, minmax(var(--card-size), 1fr));
+  grid-template-rows: repeat(8, minmax(var(--card-size), 1fr));
+}
+
+.board > * {
+  outline: 1px solid rebeccapurple;
+}
